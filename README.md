@@ -1,8 +1,8 @@
 # Integrated Repository for Project Pages
 ## Page Lists
-|Page                                            | Title                                                                        | Published @ |  source                      |
-|:----------------------------------------------:|:-----------------------------------------------------------------------------|-------------|------------------------------|
-|[3DMOM](https://cvsp-lab.github.io/ICLR_3D_MOM/)| Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images | `ICLR2025`  |  [directory](./ICLR_3D_MOM)  |
+|Page                                                | Title                                                                        | Published @ |  source                      |
+|:--------------------------------------------------:|:-----------------------------------------------------------------------------|-------------|------------------------------|
+|[3DMOM](https://cvsp-lab.github.io/ICLR2025_3D-MOM/)| Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images | `ICLR2025`  |  [directory](./ICLR_3D_MOM)  |
 
 ## Quick Guide for page uploads
 1. run below commands to make your working branch

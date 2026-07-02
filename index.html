@@ -1,3 +1,233 @@
-<html>
-    <meta http-equiv="refresh" content="0; url=https://www.pnu-cvsp.com "></meta>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CVSP Lab · Project Pages</title>
+  <meta name="description" content="Project pages of the Computer Vision and Signal Processing Lab @ Pusan National University." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%AC%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #161b22;
+      --card: #161b22;
+      --card-hover: #1c2431;
+      --border: #2d333b;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-soft: rgba(88, 166, 255, .12);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    header.hero {
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(1200px 400px at 50% -10%, rgba(88,166,255,.10), transparent 70%);
+    }
+    .hero-inner { padding: 56px 0 40px; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; letter-spacing: -.02em; }
+    .subtitle { margin: 0; color: var(--muted); font-size: clamp(15px, 2.4vw, 18px); max-width: 640px; }
+    .hero-links { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      border: 1px solid var(--border);
+      padding: 9px 16px; border-radius: 999px;
+      font-size: 14px; font-weight: 500; color: var(--text);
+      transition: border-color .15s, background .15s, transform .15s;
+    }
+    .btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .btn svg { width: 16px; height: 16px; }
+
+    .toolbar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+      padding: 28px 0 18px;
+    }
+    .toolbar h2 { margin: 0; font-size: 15px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+    .count { color: var(--accent); font-variant-numeric: tabular-nums; }
+    .search {
+      margin-left: auto; position: relative; min-width: 220px; flex: 0 1 300px;
+    }
+    .search input {
+      width: 100%; padding: 9px 14px 9px 36px;
+      background: var(--bg-soft); border: 1px solid var(--border); border-radius: 999px;
+      color: var(--text); font-size: 14px; outline: none;
+      transition: border-color .15s;
+    }
+    .search input:focus { border-color: var(--accent); }
+    .search svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 15px; height: 15px; color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+      padding-bottom: 64px;
+    }
+    .card {
+      display: flex; flex-direction: column;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: border-color .15s, background .15s, transform .15s;
+    }
+    .card:hover { border-color: var(--accent); background: var(--card-hover); transform: translateY(-2px); }
+    .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .badge {
+      font-size: 12px; font-weight: 600; letter-spacing: .02em;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 3px 10px; border-radius: 999px; white-space: nowrap;
+    }
+    .badge.muted { color: var(--muted); background: rgba(139,148,158,.12); }
+    .repo-name { font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .card h3 { margin: 0 0 auto; font-size: 17px; line-height: 1.35; letter-spacing: -.01em; }
+    .card-links { display: flex; gap: 18px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .card-links a { font-size: 14px; font-weight: 500; color: var(--accent); display: inline-flex; align-items: center; gap: 6px; }
+    .card-links a.secondary { color: var(--muted); }
+    .card-links a:hover { text-decoration: underline; }
+    .card-links svg { width: 15px; height: 15px; }
+
+    .empty { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 48px 0; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 48px;
+      color: var(--muted); font-size: 13px;
+      display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; justify-content: space-between;
+    }
+    footer a:hover { color: var(--accent); }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff; --bg-soft: #f6f8fa; --card: #ffffff; --card-hover: #f6f8fa;
+        --border: #d0d7de; --text: #1f2328; --muted: #656d76;
+        --accent: #0969da; --accent-soft: rgba(9,105,218,.10);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Pusan National University</span>
+      <h1>CVSP Lab · Project Pages</h1>
+      <p class="subtitle">Computer Vision &amp; Signal Processing Lab. A collection of project pages for our published and ongoing research.</p>
+      <div class="hero-links">
+        <a class="btn" href="https://www.pnu-cvsp.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M12 4v16"/></svg>
+          Lab Homepage
+        </a>
+        <a class="btn" href="https://github.com/cvsp-lab" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+          GitHub Org
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <h2>Projects <span class="count" id="count"></span></h2>
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="search" type="search" placeholder="Search by title, venue, repo…" autocomplete="off" aria-label="Search projects" />
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer class="wrap">
+    <span>© CVSP Lab, Pusan National University</span>
+    <span>Hosted on <a href="https://github.com/cvsp-lab/cvsp-lab.github.io" target="_blank" rel="noopener">GitHub Pages</a> · <a href="https://paper.pnu-cvsp.com" target="_blank" rel="noopener">paper.pnu-cvsp.com</a></span>
+  </footer>
+
+  <script>
+    // ── Curated list of project pages ──────────────────────────────────────
+    // To add a project: enable GitHub Pages on its repo, then add an entry
+    // below. Ordered most-recent first. `url` defaults to
+    // https://paper.pnu-cvsp.com/<repo>/ if omitted.
+    const PROJECTS = [
+      { repo: "3DZip",           venue: "ECCV 2026",    title: "3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering" },
+      { repo: "LivingWorld",     venue: "ECCV 2026",    title: "LivingWorld: Interactive 4D World Generation with Environmental Dynamics" },
+      { repo: "SFPruner",        venue: "ECCV 2026",    title: "SFPruner: Structured Redundancy Modeling for Efficient Visual Token Pruning in High-Resolution MLLMs" },
+      { repo: "MoE-GS",          venue: "ICLR 2026",    title: "MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting" },
+      { repo: "AgilePruner",     venue: "ICLR 2026",    title: "AgilePruner: Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models" },
+      { repo: "FocusMatters",    venue: "Preprint",     title: "Focus Matters: Phase-Aware Suppression for Hallucination in Vision-Language Models" },
+      { repo: "ICLR2025_3D-MOM", venue: "ICLR 2025",    title: "Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images" },
+      { repo: "Stable-cGAN",     venue: "Preprint",     title: "Enhancing Stability in Training Conditional GANs via Selective Data Matching" },
+      { repo: "3D_MRM_page",     venue: "Under Review", title: "3D-MRM", muted: true },
+    ];
+
+    const ORG = "https://github.com/cvsp-lab";
+    const BASE = "https://paper.pnu-cvsp.com";
+
+    const iconExternal = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+    const iconCode = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>';
+
+    const grid = document.getElementById("grid");
+    const countEl = document.getElementById("count");
+    const searchEl = document.getElementById("search");
+
+    function render(list) {
+      countEl.textContent = "(" + list.length + ")";
+      if (!list.length) {
+        grid.innerHTML = '<p class="empty">No projects match your search.</p>';
+        return;
+      }
+      grid.innerHTML = list.map(function (p) {
+        const url = p.url || (BASE + "/" + p.repo + "/");
+        const code = ORG + "/" + p.repo;
+        const badgeClass = p.muted ? "badge muted" : "badge";
+        return (
+          '<article class="card">' +
+            '<div class="card-top">' +
+              '<span class="' + badgeClass + '">' + p.venue + '</span>' +
+              '<span class="repo-name">' + p.repo + '</span>' +
+            '</div>' +
+            '<h3>' + p.title + '</h3>' +
+            '<div class="card-links">' +
+              '<a href="' + url + '" target="_blank" rel="noopener">Project Page ' + iconExternal + '</a>' +
+              '<a class="secondary" href="' + code + '" target="_blank" rel="noopener">' + iconCode + ' Code</a>' +
+            '</div>' +
+          '</article>'
+        );
+      }).join("");
+    }
+
+    function filter(q) {
+      q = q.trim().toLowerCase();
+      if (!q) return PROJECTS;
+      return PROJECTS.filter(function (p) {
+        return (p.title + " " + p.venue + " " + p.repo).toLowerCase().indexOf(q) !== -1;
+      });
+    }
+
+    searchEl.addEventListener("input", function () { render(filter(searchEl.value)); });
+    render(PROJECTS);
+  </script>
+</body>
 </html>

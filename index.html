@@ -168,16 +168,22 @@
   <script>
     // ── Curated list of project pages ──────────────────────────────────────
     // To add a project: enable GitHub Pages on its repo, then add an entry
-    // below. Ordered most-recent first. `url` defaults to
-    // https://paper.pnu-cvsp.com/<repo>/ if omitted.
+    // below. Ordered most-recent first.
+    //   url  — defaults to https://paper.pnu-cvsp.com/<repo>/; set it only
+    //          when the page is hosted elsewhere.
+    //   page — set to false when the repo has no project page (code only);
+    //          the card then links to the repository alone.
     const PROJECTS = [
+      { repo: "RestoreKV",       venue: "Preprint",     title: "RestoreKV: Recovering Full-Cache Behavior under Aggressive Query-Agnostic KV Cache Eviction" },
       { repo: "3DZip",           venue: "ECCV 2026",    title: "3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering" },
       { repo: "LivingWorld",     venue: "ECCV 2026",    title: "LivingWorld: Interactive 4D World Generation with Environmental Dynamics" },
       { repo: "SFPruner",        venue: "ECCV 2026",    title: "SFPruner: Structured Redundancy Modeling for Efficient Visual Token Pruning in High-Resolution MLLMs" },
+      { repo: "MoDE",            venue: "TPAMI 2026",   title: "MoDE: On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting", page: false },
       { repo: "MoE-GS",          venue: "ICLR 2026",    title: "MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting" },
-      { repo: "AgilePruner",     venue: "ICLR 2026",    title: "AgilePruner: Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models" },
+      { repo: "AgilePruner",     venue: "ICLR 2026",    title: "AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models" },
       { repo: "FocusMatters",    venue: "Preprint",     title: "Focus Matters: Phase-Aware Suppression for Hallucination in Vision-Language Models" },
       { repo: "ICLR2025_3D-MOM", venue: "ICLR 2025",    title: "Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images" },
+      { repo: "ACMTOMM_M2A",     venue: "ACM TOMM",     title: "Motion-to-Attention: Enhancing Attention Maps to Improve Performance of Text-Guided Video Editing", url: "https://currycurry915.github.io/Motion-to-Attention/" },
       { repo: "Stable-cGAN",     venue: "Preprint",     title: "Enhancing Stability in Training Conditional GANs via Selective Data Matching" },
       { repo: "3D_MRM_page",     venue: "Under Review", title: "3D-MRM", muted: true },
     ];
@@ -202,6 +208,10 @@
         const url = p.url || (BASE + "/" + p.repo + "/");
         const code = ORG + "/" + p.repo;
         const badgeClass = p.muted ? "badge muted" : "badge";
+        const hasPage = p.page !== false;
+        const pageLink = hasPage
+          ? '<a href="' + url + '" target="_blank" rel="noopener">Project Page ' + iconExternal + '</a>'
+          : "";
         return (
           '<article class="card">' +
             '<div class="card-top">' +
@@ -210,8 +220,8 @@
             '</div>' +
             '<h3>' + p.title + '</h3>' +
             '<div class="card-links">' +
-              '<a href="' + url + '" target="_blank" rel="noopener">Project Page ' + iconExternal + '</a>' +
-              '<a class="secondary" href="' + code + '" target="_blank" rel="noopener">' + iconCode + ' Code</a>' +
+              pageLink +
+              '<a class="' + (hasPage ? "secondary" : "") + '" href="' + code + '" target="_blank" rel="noopener">' + iconCode + ' Code</a>' +
             '</div>' +
           '</article>'
         );

@@ -1,0 +1,9 @@
+# Repos that must never be proposed for the hub, one per line: <repo> <TAB or spaces> <reason>
+# Everything else in the org that is public and non-fork is a candidate.
+# Forks and private repos are filtered out automatically by hub-diff.sh.
+.github                 org profile repo, not a project
+cvsp-lab.github.io      the hub itself
+coding-test             internal recruiting material
+3D_MRM_test             scratch copy of 3D_MRM_page
+MoE-GS-studio           viewer/tooling for MoE-GS, not a paper
+M2A                     superseded by ACMTOMM_M2A

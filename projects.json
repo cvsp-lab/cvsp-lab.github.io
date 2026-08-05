@@ -87,6 +87,68 @@
       "venue": "Preprint",
       "title": "Enhancing Stability in Training Conditional GANs via Selective Data Matching",
       "paper": "https://ieeexplore.ieee.org/document/10623662"
+    },
+    {
+      "id": "Programmable-Room",
+      "venue": "IEEE TMM 2025",
+      "title": "Programmable-Room: Interactive Textured 3D Room Meshes Generation Empowered by Large Language Models",
+      "paper": "https://arxiv.org/abs/2506.17707",
+      "url": "https://jihyun0510.github.io/Programmable_Room_Page/",
+      "repo": "Jihyun0510/Programmable_Room"
+    },
+    {
+      "id": "AttentionHand",
+      "venue": "ECCV 2024",
+      "title": "AttentionHand: Text-driven Controllable Hand Image Generation for 3D Hand Reconstruction in the Wild",
+      "paper": "https://arxiv.org/abs/2407.18034",
+      "url": "https://redorangeyellowy.github.io/AttentionHand/",
+      "repo": "redorangeyellowy/AttentionHand"
+    },
+    {
+      "id": "MosaicMVS",
+      "venue": "IEEE TMM 2024",
+      "title": "MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes",
+      "paper": "https://ieeexplore.ieee.org/document/10005048",
+      "url": "https://cmj5064.github.io/MosaicMVS.io/",
+      "repo": "min-jung-shin/MosaicMVS"
+    },
+    {
+      "id": "Person-in-Place",
+      "venue": "CVPR 2024",
+      "title": "Person in Place: Generating Associative Skeleton-Guidance Maps for Human-Object Interaction Image Editing",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Person_in_Place_Generating_Associative_Skeleton-Guidance_Maps_for_Human-Object_Interaction_CVPR_2024_paper.pdf",
+      "url": "https://yangchanghee.github.io/Person-in-Place_page/",
+      "repo": "YangChangHee/CVPR2024_Person-In-Place_RELEASE"
+    },
+    {
+      "id": "SEFD",
+      "venue": "ICCV 2023",
+      "title": "SEFD: Learning to Distill Complex Pose and Occlusion",
+      "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_SEFD_Learning_to_Distill_Complex_Pose_and_Occlusion_ICCV_2023_paper.pdf",
+      "url": "https://yangchanghee.github.io/ICCV2023_SEFD_page/",
+      "repo": "YangChangHee/ICCV2023_SEFD_RELEASE"
+    },
+    {
+      "id": "MMI",
+      "venue": "ICCVw 2023",
+      "title": "Enhancing Text-to-Video Editing with Motion Map Injection",
+      "paper": "https://currycurry915.github.io/MMI/static/pdfs/ICCVw2023_motion_main_paper.pdf",
+      "url": "https://currycurry915.github.io/MMI/",
+      "repo": "ICCVw2023_MMI"
+    },
+    {
+      "id": "HMTV",
+      "venue": "ICCVw 2023",
+      "title": "Text-Based Video Generation with Human Motion and Controllable Camera",
+      "url": "https://yangchanghee.github.io/ICCVW_CPM/",
+      "repo": false
+    },
+    {
+      "id": "CEP",
+      "venue": "WACV 2023",
+      "title": "An Unified Framework for Language Guided Image Completion",
+      "paper": "https://openaccess.thecvf.com/content/WACV2023/papers/Kim_An_Unified_Framework_for_Language_Guided_Image_Completion_WACV_2023_paper.pdf",
+      "url": "https://jihyun0510.github.io/CEP/"
     }
   ]
 }

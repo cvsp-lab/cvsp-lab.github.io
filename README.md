@@ -20,7 +20,6 @@ The landing page (`index.html`) renders a curated list held in **[`projects.json
 | [3D-MOM](https://paper.pnu-cvsp.com/ICLR2025_3D-MOM/) | Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images | `ICLR 2025` | [arXiv](https://arxiv.org/abs/2504.05458) | [cvsp-lab/ICLR2025_3D-MOM](https://github.com/cvsp-lab/ICLR2025_3D-MOM) |
 | [Motion-to-Attention](https://currycurry915.github.io/Motion-to-Attention/) | Enhancing Attention Maps to Improve Performance of Text-Guided Video Editing | `ACM TOMM` | [PDF](https://currycurry915.github.io/Motion-to-Attention/static/pdfs/IEEE_TCSVT_Attention.pdf) | [cvsp-lab/ACMTOMM_M2A](https://github.com/cvsp-lab/ACMTOMM_M2A) |
 | [Stable-cGAN](https://paper.pnu-cvsp.com/Stable-cGAN/) | Enhancing Stability in Training Conditional GANs via Selective Data Matching | `Preprint` | [IEEE](https://ieeexplore.ieee.org/document/10623662) | [cvsp-lab/Stable-cGAN](https://github.com/cvsp-lab/Stable-cGAN) |
-| [3D-MRM](https://paper.pnu-cvsp.com/3D_MRM_page/) | 3D-MRM | `Under Review` | — | [cvsp-lab/3D_MRM_page](https://github.com/cvsp-lab/3D_MRM_page) |
 
 To add a project to the hub, append an entry to `projects` in [`projects.json`](./projects.json) (and, optionally, a row to the table above). No build step — the page fetches the file at load time.
 

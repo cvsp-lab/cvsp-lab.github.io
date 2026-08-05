@@ -87,12 +87,6 @@
       "venue": "Preprint",
       "title": "Enhancing Stability in Training Conditional GANs via Selective Data Matching",
       "paper": "https://ieeexplore.ieee.org/document/10623662"
-    },
-    {
-      "id": "3D_MRM_page",
-      "venue": "Under Review",
-      "title": "3D-MRM",
-      "muted": true
     }
   ]
 }

@@ -104,7 +104,7 @@
     .badge.muted { color: var(--muted); background: rgba(139,148,158,.12); }
     .repo-name { font-size: 12px; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     .card h3 { margin: 0 0 auto; font-size: 17px; line-height: 1.35; letter-spacing: -.01em; }
-    .card-links { display: flex; gap: 18px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .card-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
     .card-links a { font-size: 14px; font-weight: 500; color: var(--accent); display: inline-flex; align-items: center; gap: 6px; }
     .card-links a.secondary { color: var(--muted); }
     .card-links a:hover { text-decoration: underline; }
@@ -166,37 +166,49 @@
   </footer>
 
   <script>
-    // ── Curated list of project pages ──────────────────────────────────────
-    // To add a project: enable GitHub Pages on its repo, then add an entry
-    // below. Ordered most-recent first.
-    //   url  — defaults to https://paper.pnu-cvsp.com/<repo>/; set it only
-    //          when the page is hosted elsewhere.
-    //   page — set to false when the repo has no project page (code only);
-    //          the card then links to the repository alone.
-    const PROJECTS = [
-      { repo: "RestoreKV",       venue: "Preprint",     title: "RestoreKV: Recovering Full-Cache Behavior under Aggressive Query-Agnostic KV Cache Eviction" },
-      { repo: "3DZip",           venue: "ECCV 2026",    title: "3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering" },
-      { repo: "LivingWorld",     venue: "ECCV 2026",    title: "LivingWorld: Interactive 4D World Generation with Environmental Dynamics" },
-      { repo: "SFPruner",        venue: "ECCV 2026",    title: "SFPruner: Structured Redundancy Modeling for Efficient Visual Token Pruning in High-Resolution MLLMs" },
-      { repo: "MoDE",            venue: "TPAMI 2026",   title: "MoDE: On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting", page: false },
-      { repo: "MoE-GS",          venue: "ICLR 2026",    title: "MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting" },
-      { repo: "AgilePruner",     venue: "ICLR 2026",    title: "AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models" },
-      { repo: "FocusMatters",    venue: "Preprint",     title: "Focus Matters: Phase-Aware Suppression for Hallucination in Vision-Language Models" },
-      { repo: "ICLR2025_3D-MOM", venue: "ICLR 2025",    title: "Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images" },
-      { repo: "ACMTOMM_M2A",     venue: "ACM TOMM",     title: "Motion-to-Attention: Enhancing Attention Maps to Improve Performance of Text-Guided Video Editing", url: "https://currycurry915.github.io/Motion-to-Attention/" },
-      { repo: "Stable-cGAN",     venue: "Preprint",     title: "Enhancing Stability in Training Conditional GANs via Selective Data Matching" },
-      { repo: "3D_MRM_page",     venue: "Under Review", title: "3D-MRM", muted: true },
-    ];
+    // ── Project list ───────────────────────────────────────────────────────
+    // The curated list lives in projects.json — edit that file alone to add,
+    // remove or reorder cards. See README.md for the field reference.
+    const DATA_URL = "projects.json";
 
-    const ORG = "https://github.com/cvsp-lab";
-    const BASE = "https://paper.pnu-cvsp.com";
+    const DEFAULTS = {
+      pageBase: "https://paper.pnu-cvsp.com",
+      org: "https://github.com/cvsp-lab",
+    };
 
     const iconExternal = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>';
     const iconCode = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>';
+    const iconPaper = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>';
 
     const grid = document.getElementById("grid");
     const countEl = document.getElementById("count");
     const searchEl = document.getElementById("search");
+
+    let PROJECTS = [];
+    let site = DEFAULTS;
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+      });
+    }
+
+    // Project page: `url` string wins, `url: false` means none, otherwise
+    // it defaults to <pageBase>/<id>/.
+    function pageUrl(p) {
+      if (p.url === false) return null;
+      if (typeof p.url === "string") return p.url;
+      return site.pageBase + "/" + p.id + "/";
+    }
+
+    // Code: `repo: false` means none, "owner/name" points outside the org,
+    // a bare name (or nothing) resolves against <org>/.
+    function repoUrl(p) {
+      if (p.repo === false) return null;
+      const repo = typeof p.repo === "string" ? p.repo : p.id;
+      if (repo.indexOf("/") !== -1) return "https://github.com/" + repo;
+      return site.org + "/" + repo;
+    }
 
     function render(list) {
       countEl.textContent = "(" + list.length + ")";
@@ -205,24 +217,30 @@
         return;
       }
       grid.innerHTML = list.map(function (p) {
-        const url = p.url || (BASE + "/" + p.repo + "/");
-        const code = ORG + "/" + p.repo;
+        const page = pageUrl(p);
+        const code = repoUrl(p);
         const badgeClass = p.muted ? "badge muted" : "badge";
-        const hasPage = p.page !== false;
-        const pageLink = hasPage
-          ? '<a href="' + url + '" target="_blank" rel="noopener">Project Page ' + iconExternal + '</a>'
-          : "";
+
+        // Paper first, then Project Page, then Code. The leading link keeps
+        // the accent colour; the rest are muted.
+        const links = [];
+        if (p.paper) links.push([p.paper, iconPaper + " Paper"]);
+        if (page) links.push([page, "Project Page " + iconExternal]);
+        if (code) links.push([code, iconCode + " Code"]);
+
+        const cardLinks = links.map(function (l, i) {
+          return '<a class="' + (i === 0 ? "" : "secondary") + '" href="' + escapeHtml(l[0]) +
+            '" target="_blank" rel="noopener">' + l[1] + '</a>';
+        }).join("");
+
         return (
           '<article class="card">' +
             '<div class="card-top">' +
-              '<span class="' + badgeClass + '">' + p.venue + '</span>' +
-              '<span class="repo-name">' + p.repo + '</span>' +
+              '<span class="' + badgeClass + '">' + escapeHtml(p.venue) + '</span>' +
+              '<span class="repo-name">' + escapeHtml(p.id) + '</span>' +
             '</div>' +
-            '<h3>' + p.title + '</h3>' +
-            '<div class="card-links">' +
-              pageLink +
-              '<a class="' + (hasPage ? "secondary" : "") + '" href="' + code + '" target="_blank" rel="noopener">' + iconCode + ' Code</a>' +
-            '</div>' +
+            '<h3>' + escapeHtml(p.title) + '</h3>' +
+            '<div class="card-links">' + cardLinks + '</div>' +
           '</article>'
         );
       }).join("");
@@ -232,12 +250,28 @@
       q = q.trim().toLowerCase();
       if (!q) return PROJECTS;
       return PROJECTS.filter(function (p) {
-        return (p.title + " " + p.venue + " " + p.repo).toLowerCase().indexOf(q) !== -1;
+        return (p.title + " " + p.venue + " " + p.id).toLowerCase().indexOf(q) !== -1;
       });
     }
 
     searchEl.addEventListener("input", function () { render(filter(searchEl.value)); });
-    render(PROJECTS);
+
+    fetch(DATA_URL, { cache: "no-cache" })
+      .then(function (r) {
+        if (!r.ok) throw new Error(DATA_URL + " → HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        site = Object.assign({}, DEFAULTS, data.site);
+        PROJECTS = (data.projects || []).filter(function (p) { return p && p.id; });
+        render(PROJECTS);
+      })
+      .catch(function (err) {
+        countEl.textContent = "";
+        grid.innerHTML = '<p class="empty">Could not load <code>' + DATA_URL + '</code>.<br>' +
+          escapeHtml(err.message) + '</p>';
+        console.error(err);
+      });
   </script>
 </body>
 </html>

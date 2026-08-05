@@ -1,0 +1,98 @@
+{
+  "site": {
+    "pageBase": "https://paper.pnu-cvsp.com",
+    "org": "https://github.com/cvsp-lab"
+  },
+  "projects": [
+    {
+      "id": "RestoreKV",
+      "venue": "Preprint",
+      "title": "RestoreKV: Recovering Full-Cache Behavior under Aggressive Query-Agnostic KV Cache Eviction",
+      "paper": "https://arxiv.org/abs/2608.01247"
+    },
+    {
+      "id": "3DZip",
+      "venue": "ECCV 2026",
+      "title": "3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering",
+      "paper": "https://arxiv.org/abs/2608.01185"
+    },
+    {
+      "id": "LivingWorld",
+      "venue": "ECCV 2026",
+      "title": "LivingWorld: Interactive 4D World Generation with Environmental Dynamics",
+      "paper": "https://arxiv.org/abs/2604.01641"
+    },
+    {
+      "id": "TRiGS",
+      "venue": "ECCV 2026",
+      "title": "TRiGS: Temporal Rigid-Body Motion for Scalable 4D Gaussian Splatting",
+      "paper": "https://arxiv.org/abs/2604.00538",
+      "url": "https://wwwjjn.github.io/TRiGS-project_page/",
+      "repo": false
+    },
+    {
+      "id": "SFPruner",
+      "venue": "ECCV 2026",
+      "title": "SFPruner: Structured Redundancy Modeling for Efficient Visual Token Pruning in High-Resolution MLLMs",
+      "paper": "https://arxiv.org/abs/2607.23046"
+    },
+    {
+      "id": "PADS-TAL",
+      "venue": "ICML 2026",
+      "title": "PADS-TAL: Padding-Annealed Diffusion Sampling in Text-Aware Latent Space for Robust and Diverse Text-to-Music Generation",
+      "url": "https://pads-tal.github.io/PADS-TAL.io/",
+      "repo": "PADS-TAL/PADS-TAL"
+    },
+    {
+      "id": "MoDE",
+      "venue": "TPAMI 2026",
+      "title": "MoDE: On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting",
+      "paper": "https://arxiv.org/abs/2607.08250",
+      "url": false,
+      "repo": "MoE-GS-studio"
+    },
+    {
+      "id": "MoE-GS",
+      "venue": "ICLR 2026",
+      "title": "MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting",
+      "paper": "https://arxiv.org/abs/2510.19210"
+    },
+    {
+      "id": "AgilePruner",
+      "venue": "ICLR 2026",
+      "title": "AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models",
+      "paper": "https://arxiv.org/abs/2603.01236"
+    },
+    {
+      "id": "FocusMatters",
+      "venue": "Preprint",
+      "title": "Focus Matters: Phase-Aware Suppression for Hallucination in Vision-Language Models",
+      "paper": "https://arxiv.org/abs/2604.03556"
+    },
+    {
+      "id": "ICLR2025_3D-MOM",
+      "venue": "ICLR 2025",
+      "title": "Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images",
+      "paper": "https://arxiv.org/abs/2504.05458"
+    },
+    {
+      "id": "ACMTOMM_M2A",
+      "venue": "ACM TOMM",
+      "title": "Motion-to-Attention: Enhancing Attention Maps to Improve Performance of Text-Guided Video Editing",
+      "paper": "https://currycurry915.github.io/Motion-to-Attention/static/pdfs/IEEE_TCSVT_Attention.pdf",
+      "url": "https://currycurry915.github.io/Motion-to-Attention/"
+    },
+    {
+      "id": "Stable-cGAN",
+      "venue": "Preprint",
+      "title": "Enhancing Stability in Training Conditional GANs via Selective Data Matching",
+      "paper": "https://ieeexplore.ieee.org/document/10623662"
+    },
+    {
+      "id": "3D_MRM_page",
+      "venue": "Under Review",
+      "title": "3D-MRM",
+      "muted": true
+    }
+  ]
+}

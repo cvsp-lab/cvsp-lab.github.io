@@ -121,6 +121,14 @@
       "repo": "YangChangHee/CVPR2024_Person-In-Place_RELEASE"
     },
     {
+      "id": "HMTV",
+      "venue": "WACV 2024",
+      "title": "Human Motion Aware Text-to-Video Generation with Explicit Camera Control",
+      "paper": "https://openaccess.thecvf.com/content/WACV2024/papers/Kim_Human_Motion_Aware_Text-to-Video_Generation_With_Explicit_Camera_Control_WACV_2024_paper.pdf",
+      "url": "https://csjasper.github.io/HMTV/",
+      "repo": "CSJasper/HMTV"
+    },
+    {
       "id": "SEFD",
       "venue": "ICCV 2023",
       "title": "SEFD: Learning to Distill Complex Pose and Occlusion",
@@ -135,13 +143,6 @@
       "paper": "https://currycurry915.github.io/MMI/static/pdfs/ICCVw2023_motion_main_paper.pdf",
       "url": "https://currycurry915.github.io/MMI/",
       "repo": "ICCVw2023_MMI"
-    },
-    {
-      "id": "HMTV",
-      "venue": "ICCVw 2023",
-      "title": "Text-Based Video Generation with Human Motion and Controllable Camera",
-      "url": "https://yangchanghee.github.io/ICCVW_CPM/",
-      "repo": false
     },
     {
       "id": "CEP",

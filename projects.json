@@ -83,12 +83,6 @@
       "url": "https://currycurry915.github.io/Motion-to-Attention/"
     },
     {
-      "id": "Stable-cGAN",
-      "venue": "Preprint",
-      "title": "Enhancing Stability in Training Conditional GANs via Selective Data Matching",
-      "paper": "https://ieeexplore.ieee.org/document/10623662"
-    },
-    {
       "id": "Programmable-Room",
       "venue": "IEEE TMM 2025",
       "title": "Programmable-Room: Interactive Textured 3D Room Meshes Generation Empowered by Large Language Models",
@@ -103,6 +97,12 @@
       "paper": "https://arxiv.org/abs/2407.18034",
       "url": "https://redorangeyellowy.github.io/AttentionHand/",
       "repo": "redorangeyellowy/AttentionHand"
+    },
+    {
+      "id": "Stable-cGAN",
+      "venue": "IEEE Access 2024",
+      "title": "Enhancing Stability in Training Conditional GANs via Selective Data Matching",
+      "paper": "https://ieeexplore.ieee.org/document/10623662"
     },
     {
       "id": "MosaicMVS",

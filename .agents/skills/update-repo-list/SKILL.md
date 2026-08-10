@@ -30,7 +30,7 @@ If a paper is still under embargo, wait for the repo to be made public. Do **not
 ### 1. Diff the hub against the org
 
 ```bash
-.claude/skills/update-repo-list/scripts/hub-diff.sh
+.Codex/skills/update-repo-list/scripts/hub-diff.sh
 ```
 
 Exit 0 = in sync, 1 = drift, 2 = the `gh` query failed. It reports four categories:
@@ -81,7 +81,7 @@ Add a matching row to the "Page Lists" table, in the **same order** as the array
 ### 5. Verify
 
 ```bash
-.claude/skills/update-repo-list/scripts/hub-diff.sh   # must now exit 0
+.Codex/skills/update-repo-list/scripts/hub-diff.sh   # must now exit 0
 ```
 
 Then confirm the page still renders — the `PROJECTS` array is parsed by the browser, so a stray comma or unescaped quote silently blanks the whole grid:

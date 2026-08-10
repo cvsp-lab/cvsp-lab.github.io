@@ -8,28 +8,24 @@
       "id": "RestoreKV",
       "venue": "Preprint",
       "title": "RestoreKV: Recovering Full-Cache Behavior under Aggressive Query-Agnostic KV Cache Eviction",
-      "tags": ["Efficient Inference", "KV Cache", "Knowledge Distillation", "LLM"],
       "paper": "https://arxiv.org/abs/2608.01247"
     },
     {
       "id": "3DZip",
       "venue": "ECCV 2026",
       "title": "3DZip: Spatial-Aware Feature Diversity-Guided Token Compression for 3D Question Answering",
-      "tags": ["Efficient Inference", "Token Pruning", "VLM", "Determinantal Point Process"],
       "paper": "https://arxiv.org/abs/2608.01185"
     },
     {
       "id": "LivingWorld",
       "venue": "ECCV 2026",
       "title": "LivingWorld: Interactive 4D World Generation with Environmental Dynamics",
-      "tags": ["4D Generation", "Scene Generation", "Single Image", "Motion Field"],
       "paper": "https://arxiv.org/abs/2604.01641"
     },
     {
       "id": "TRiGS",
       "venue": "ECCV 2026",
       "title": "TRiGS: Temporal Rigid-Body Motion for Scalable 4D Gaussian Splatting",
-      "tags": ["Gaussian Splatting", "Dynamic Scene", "Rigid Motion"],
       "paper": "https://arxiv.org/abs/2604.00538",
       "url": "https://wwwjjn.github.io/TRiGS-project_page/",
       "repo": false
@@ -38,14 +34,12 @@
       "id": "SFPruner",
       "venue": "ECCV 2026",
       "title": "SFPruner: Structured Redundancy Modeling for Efficient Visual Token Pruning in High-Resolution MLLMs",
-      "tags": ["Efficient Inference", "Token Pruning", "VLM"],
       "paper": "https://arxiv.org/abs/2607.23046"
     },
     {
       "id": "PADS-TAL",
       "venue": "ICML 2026",
       "title": "PADS-TAL: Padding-Annealed Diffusion Sampling in Text-Aware Latent Space for Robust and Diverse Text-to-Music Generation",
-      "tags": ["Diffusion", "Text-to-Music", "Latent Space"],
       "url": "https://pads-tal.github.io/PADS-TAL.io/",
       "repo": "PADS-TAL/PADS-TAL"
     },
@@ -53,7 +47,6 @@
       "id": "MoDE",
       "venue": "TPAMI 2026",
       "title": "MoDE: On the Design of Mixture-of-Experts for Dynamic Gaussian Splatting",
-      "tags": ["Gaussian Splatting", "Dynamic Scene", "Mixture of Experts", "Novel View Synthesis"],
       "paper": "https://arxiv.org/abs/2607.08250",
       "url": false,
       "repo": "MoE-GS-studio"
@@ -62,35 +55,30 @@
       "id": "MoE-GS",
       "venue": "ICLR 2026",
       "title": "MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting",
-      "tags": ["Gaussian Splatting", "Dynamic Scene", "Mixture of Experts", "Novel View Synthesis", "Knowledge Distillation"],
       "paper": "https://arxiv.org/abs/2510.19210"
     },
     {
       "id": "AgilePruner",
       "venue": "ICLR 2026",
       "title": "AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in Large Vision-Language Models",
-      "tags": ["Efficient Inference", "Token Pruning", "VLM", "Hallucination"],
       "paper": "https://arxiv.org/abs/2603.01236"
     },
     {
       "id": "FocusMatters",
       "venue": "Preprint",
       "title": "Focus Matters: Phase-Aware Suppression for Hallucination in Vision-Language Models",
-      "tags": ["Hallucination", "VLM", "Attention", "Determinantal Point Process"],
       "paper": "https://arxiv.org/abs/2604.03556"
     },
     {
       "id": "ICLR2025_3D-MOM",
       "venue": "ICLR 2025",
       "title": "Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images",
-      "tags": ["Gaussian Splatting", "Dynamic Scene", "4D Generation", "Single Image"],
       "paper": "https://arxiv.org/abs/2504.05458"
     },
     {
       "id": "ACMTOMM_M2A",
       "venue": "ACM TOMM",
       "title": "Motion-to-Attention: Enhancing Attention Maps to Improve Performance of Text-Guided Video Editing",
-      "tags": ["Video Editing", "Attention", "Optical Flow", "Diffusion"],
       "paper": "https://currycurry915.github.io/Motion-to-Attention/static/pdfs/IEEE_TCSVT_Attention.pdf",
       "url": "https://currycurry915.github.io/Motion-to-Attention/"
     },
@@ -98,7 +86,6 @@
       "id": "Programmable-Room",
       "venue": "IEEE TMM 2025",
       "title": "Programmable-Room: Interactive Textured 3D Room Meshes Generation Empowered by Large Language Models",
-      "tags": ["Scene Generation", "LLM", "Diffusion", "Visual Programming"],
       "paper": "https://arxiv.org/abs/2506.17707",
       "url": "https://jihyun0510.github.io/Programmable_Room_Page/",
       "repo": "Jihyun0510/Programmable_Room"
@@ -107,7 +94,6 @@
       "id": "AttentionHand",
       "venue": "ECCV 2024",
       "title": "AttentionHand: Text-driven Controllable Hand Image Generation for 3D Hand Reconstruction in the Wild",
-      "tags": ["Image Generation", "Diffusion", "Attention", "Hand Reconstruction"],
       "paper": "https://arxiv.org/abs/2407.18034",
       "url": "https://redorangeyellowy.github.io/AttentionHand/",
       "repo": "redorangeyellowy/AttentionHand"
@@ -116,14 +102,12 @@
       "id": "Stable-cGAN",
       "venue": "IEEE Access 2024",
       "title": "Enhancing Stability in Training Conditional GANs via Selective Data Matching",
-      "tags": ["Image Generation", "GAN", "Training Stability"],
       "paper": "https://ieeexplore.ieee.org/document/10623662"
     },
     {
       "id": "MosaicMVS",
       "venue": "IEEE TMM 2024",
       "title": "MosaicMVS: Mosaic-based Omnidirectional Multi-view Stereo for Indoor Scenes",
-      "tags": ["3D Reconstruction", "Depth Estimation", "Multi-view Stereo", "Omnidirectional"],
       "paper": "https://ieeexplore.ieee.org/document/10005048",
       "url": "https://cmj5064.github.io/MosaicMVS.io/",
       "repo": "min-jung-shin/MosaicMVS"
@@ -132,7 +116,6 @@
       "id": "Person-in-Place",
       "venue": "CVPR 2024",
       "title": "Person in Place: Generating Associative Skeleton-Guidance Maps for Human-Object Interaction Image Editing",
-      "tags": ["Image Editing", "Diffusion", "Human Pose", "Human-Object Interaction"],
       "paper": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Person_in_Place_Generating_Associative_Skeleton-Guidance_Maps_for_Human-Object_Interaction_CVPR_2024_paper.pdf",
       "url": "https://yangchanghee.github.io/Person-in-Place_page/",
       "repo": "YangChangHee/CVPR2024_Person-In-Place_RELEASE"
@@ -141,7 +124,6 @@
       "id": "HMTV",
       "venue": "WACV 2024",
       "title": "Human Motion Aware Text-to-Video Generation with Explicit Camera Control",
-      "tags": ["Video Generation", "Human Motion", "Human Pose", "Camera Control"],
       "paper": "https://openaccess.thecvf.com/content/WACV2024/papers/Kim_Human_Motion_Aware_Text-to-Video_Generation_With_Explicit_Camera_Control_WACV_2024_paper.pdf",
       "url": "https://csjasper.github.io/HMTV/",
       "repo": "CSJasper/HMTV"
@@ -150,7 +132,6 @@
       "id": "SEFD",
       "venue": "ICCV 2023",
       "title": "SEFD: Learning to Distill Complex Pose and Occlusion",
-      "tags": ["Human Mesh Recovery", "Human Pose", "Knowledge Distillation", "Occlusion"],
       "paper": "https://openaccess.thecvf.com/content/ICCV2023/papers/Yang_SEFD_Learning_to_Distill_Complex_Pose_and_Occlusion_ICCV_2023_paper.pdf",
       "url": "https://yangchanghee.github.io/ICCV2023_SEFD_page/",
       "repo": "YangChangHee/ICCV2023_SEFD_RELEASE"
@@ -159,7 +140,6 @@
       "id": "MMI",
       "venue": "ICCVw 2023",
       "title": "Enhancing Text-to-Video Editing with Motion Map Injection",
-      "tags": ["Video Editing", "Attention", "Diffusion"],
       "paper": "https://currycurry915.github.io/MMI/static/pdfs/ICCVw2023_motion_main_paper.pdf",
       "url": "https://currycurry915.github.io/MMI/",
       "repo": "ICCVw2023_MMI"
@@ -168,7 +148,6 @@
       "id": "CEP",
       "venue": "WACV 2023",
       "title": "An Unified Framework for Language Guided Image Completion",
-      "tags": ["Image Completion", "Outpainting", "Image Captioning", "Diffusion"],
       "paper": "https://openaccess.thecvf.com/content/WACV2023/papers/Kim_An_Unified_Framework_for_Language_Guided_Image_Completion_WACV_2023_paper.pdf",
       "url": "https://jihyun0510.github.io/CEP/"
     }

@@ -37,8 +37,7 @@ To add a project to the hub, append an entry to `projects` in [`projects.json`](
 {
   "site": { "pageBase": "https://paper.pnu-cvsp.com", "org": "https://github.com/cvsp-lab" },
   "projects": [
-    { "id": "MyProject", "venue": "CVPR 2026", "title": "My Beautiful Project Title",
-      "tags": ["Gaussian Splatting", "Dynamic Scene"] }
+    { "id": "MyProject", "venue": "CVPR 2026", "title": "My Beautiful Project Title" }
   ]
 }
 ```
@@ -50,19 +49,12 @@ Cards render in file order (most recent first), each showing up to three links i
 | `id` | ✅ | Slug shown on the card, and the default for the page/code links below. Usually the repo name. |
 | `venue` | ✅ | Badge text (`ECCV 2026`, `Preprint`, `Under Review`, …). |
 | `title` | ✅ | Card headline. |
-| `tags` | | Topic chips shown between the title and the links. Clicking one filters the grid to that tag; clicking it again clears the filter. Also matched by the search box. |
 | `paper` | | arXiv / IEEE / ACM / PDF URL. Omit → no *Paper* link. There is no default. |
 | `url` | | Project page. Omit → `<pageBase>/<id>/`. A string points anywhere (e.g. a personal Pages site). `false` → no *Project Page* link. |
 | `repo` | | Code. Omit → `<org>/<id>`. `"owner/name"` points at a repo outside the org. `false` → no *Code* link. |
 | `muted` | | `true` greys out the badge — used for unpublished / under-review work. |
 
 `site.pageBase` and `site.org` are optional; drop them to fall back to the values above.
-
-Tags are a free-form list, but reuse an existing one wherever it fits — a tag that appears on a single card filters down to that card and is no more useful than the search box. Run this to see what is already in play:
-
-```bash
-python3 -c "import json,collections;print(collections.Counter(t for p in json.load(open('projects.json'))['projects'] for t in p.get('tags',[])).most_common())"
-```
 
 Examples:
 
